@@ -40,7 +40,7 @@ jobs:
       -
         name: Pull Trigger
         run: |
-          curl -X POST curl -X POST ${{ secrets.DOCKER_PULL_TRIGGER_URL }} \
+          curl -X POST ${{ secrets.DOCKER_PULL_TRIGGER_URL }} \
           --data image=${{ secrets.DOCKER_IMAGE }} \
           --data port=8081 \
           --data targetPort=3000
