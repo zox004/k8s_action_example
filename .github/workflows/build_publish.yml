@@ -29,4 +29,7 @@ jobs:
       -
         name: Pull Trigger
         run: |
-          curl -X POST http://192.168.2.10:3000/pull --data image=k8s-action-example --data port=3000 --data targetPort=3000
+          curl -X POST ${{ secrets.DOCKER_PULL_TRIGGER_URL }} \
+          --data image=${{ secrets.DOCKER_IMAGE }} \
+          --data port=8081 \
+          --data targetPort=3000
